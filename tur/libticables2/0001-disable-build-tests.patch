@@ -1,0 +1,25 @@
+diff --git a/libticables/trunk/Makefile.am b/libticables/trunk/Makefile.am
+index 364ed147..93cfcd5c 100644
+--- a/libticables/trunk/Makefile.am
++++ b/libticables/trunk/Makefile.am
+@@ -3,7 +3,7 @@
+ ACLOCAL_AMFLAGS=-I m4
+ 
+ # Subdirectories to scan
+-SUBDIRS = build/mingw po src tests
++SUBDIRS = build/mingw po src
+ 
+ if USE_DOCGEN
+   SUBDIRS += docs
+diff --git a/libticables/trunk/configure.ac b/libticables/trunk/configure.ac
+index b9d2b4b1..00fdf1a1 100644
+--- a/libticables/trunk/configure.ac
++++ b/libticables/trunk/configure.ac
+@@ -38,7 +38,6 @@ AC_CONFIG_FILES([
+   src/Makefile
+   src/win32/dha/Makefile
+   src/win64/rwp/Makefile
+-  tests/Makefile
+   ticables2.pc
+ ])
+ 

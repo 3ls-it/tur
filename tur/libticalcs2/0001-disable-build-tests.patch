@@ -1,0 +1,25 @@
+diff --git a/libticalcs/trunk/Makefile.am b/libticalcs/trunk/Makefile.am
+index bbfd1129..7c52e897 100644
+--- a/libticalcs/trunk/Makefile.am
++++ b/libticalcs/trunk/Makefile.am
+@@ -3,7 +3,7 @@
+ ACLOCAL_AMFLAGS=-I m4
+ 
+ # Subdirectories to scan
+-SUBDIRS = build/mingw po src tests
++SUBDIRS = build/mingw po src
+ 
+ if USE_DOCGEN
+   SUBDIRS += docs
+diff --git a/libticalcs/trunk/configure.ac b/libticalcs/trunk/configure.ac
+index 90cefd6b..d7fc99fe 100644
+--- a/libticalcs/trunk/configure.ac
++++ b/libticalcs/trunk/configure.ac
+@@ -40,7 +40,6 @@ AC_CONFIG_FILES([
+   src/romdump_84p_usb/Makefile
+   src/romdump_9x/Makefile
+   src/romdump_834pce_usb/Makefile
+-  tests/Makefile
+   ticalcs2.pc
+ ])
+ 

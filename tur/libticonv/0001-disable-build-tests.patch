@@ -1,0 +1,25 @@
+diff --git a/libticonv/trunk/Makefile.am b/libticonv/trunk/Makefile.am
+index c9998a3d..1f3f4c76 100644
+--- a/libticonv/trunk/Makefile.am
++++ b/libticonv/trunk/Makefile.am
+@@ -3,7 +3,7 @@
+ ACLOCAL_AMFLAGS=-I m4
+ 
+ # Subdirectories to scan
+-SUBDIRS = build/mingw src tests
++SUBDIRS = build/mingw src
+ 
+ if USE_DOCGEN
+   SUBDIRS += docs
+diff --git a/libticonv/trunk/configure.ac b/libticonv/trunk/configure.ac
+index 5fc0be7c..084908a2 100644
+--- a/libticonv/trunk/configure.ac
++++ b/libticonv/trunk/configure.ac
+@@ -35,7 +35,6 @@ AC_CONFIG_FILES([
+   build/mingw/Makefile
+   docs/Makefile
+   src/Makefile
+-  tests/Makefile
+   ticonv.pc
+ ])
+ 

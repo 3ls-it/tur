@@ -1,0 +1,45 @@
+diff --git a/libticables/trunk/src/linux/link_tie.cc b/libticables/trunk/src/linux/link_tie.cc
+index ddaf6b8c..f71fa303 100644
+--- a/libticables/trunk/src/linux/link_tie.cc
++++ b/libticables/trunk/src/linux/link_tie.cc
+@@ -63,15 +63,15 @@ static int wr[2] = { 0 };	// Pipe 0 -> 1 or 1 -> 0
+ 
+ static const char fifo_names[4][256] = 
+ {
+-	"/tmp/.vlc_1_0", "/tmp/.vlc_0_1",
+-	"/tmp/.vlc_0_1", "/tmp/.vlc_1_0"
++	"@TERMUX_PREFIX@/tmp/.vlc_1_0", "@TERMUX_PREFIX@/tmp/.vlc_0_1",
++	"@TERMUX_PREFIX@/tmp/.vlc_0_1", "@TERMUX_PREFIX@/tmp/.vlc_1_0"
+ };
+ 
+ static int shm_check(void)
+ {
+ 	int shmid_;
+ 
+-	if ((ipc_key = ftok("/tmp", 0x1234)) == -1)
++	if ((ipc_key = ftok("@TERMUX_PREFIX@/tmp", 0x1234)) == -1)
+ 	{
+ 		return ERR_TIE_OPEN;
+ 	}
+@@ -117,7 +117,7 @@ static int tie_open(CableHandle *h)
+ 	int p = h->address;
+ 	int newseg = 0;
+ 
+-	if ((ipc_key = ftok("/tmp", 0x1234)) == -1)
++	if ((ipc_key = ftok("@TERMUX_PREFIX@/tmp", 0x1234)) == -1)
+ 	{
+ 		return ERR_TIE_OPEN;
+ 	}
+diff --git a/libticables/trunk/src/linux/link_vti.cc b/libticables/trunk/src/linux/link_vti.cc
+index 33f3a7da..f548cc27 100644
+--- a/libticables/trunk/src/linux/link_vti.cc
++++ b/libticables/trunk/src/linux/link_vti.cc
+@@ -95,7 +95,7 @@ static int vti_open(CableHandle *h)
+ 	/* Get a unique (if possible) key */
+ 	for (i = 0; i < 2; i++)
+ 	{
+-		if ((ipc_key[i] = ftok("/tmp", i)) == -1)
++		if ((ipc_key[i] = ftok("@TERMUX_PREFIX@/tmp", i)) == -1)
+ 		{
+ 			ticables_warning("unable to get unique key (ftok).\n");
+ 			return ERR_VTI_IPCKEY;

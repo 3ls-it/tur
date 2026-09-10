@@ -1,0 +1,13 @@
+diff --git a/tilp/trunk/src/clist_rbm.c b/tilp/trunk/src/clist_rbm.c
+index d8adb92f..bc04787f 100644
+--- a/tilp/trunk/src/clist_rbm.c
++++ b/tilp/trunk/src/clist_rbm.c
+@@ -215,7 +215,7 @@ TILP_EXPORT void rbm_opengfm_activate(GtkMenuItem* menuitem, gpointer user_data)
+ #ifdef __WIN32__
+ 	const char *app_path = get_gfm_path();
+ #else
+-	const char *app_path1 = "/usr/bin/gfm";
++	const char *app_path1 = "@TERMUX_PREFIX@/bin/gfm";
+ 	const char *app_path2 = "/usr/local/bin/gfm";
+ 	const char *app_path = app_path1;
+ #endif

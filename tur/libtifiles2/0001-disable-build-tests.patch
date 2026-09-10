@@ -1,0 +1,25 @@
+diff --git a/libtifiles/trunk/Makefile.am b/libtifiles/trunk/Makefile.am
+index 33300d39..def36b26 100644
+--- a/libtifiles/trunk/Makefile.am
++++ b/libtifiles/trunk/Makefile.am
+@@ -3,7 +3,7 @@
+ ACLOCAL_AMFLAGS=-I m4
+ 
+ # Subdirectories to scan
+-SUBDIRS = build/mingw po src tests
++SUBDIRS = build/mingw po src
+ 
+ if USE_DOCGEN
+   SUBDIRS += docs
+diff --git a/libtifiles/trunk/configure.ac b/libtifiles/trunk/configure.ac
+index 6c652f9d..b790b77d 100644
+--- a/libtifiles/trunk/configure.ac
++++ b/libtifiles/trunk/configure.ac
+@@ -36,7 +36,6 @@ AC_CONFIG_FILES([
+   docs/Makefile
+   po/Makefile.in
+   src/Makefile
+-  tests/Makefile
+   tifiles2.pc
+ ])
+ 
